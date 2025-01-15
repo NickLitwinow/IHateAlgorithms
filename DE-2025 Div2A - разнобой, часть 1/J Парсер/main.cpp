@@ -2,11 +2,11 @@
 using namespace std;
 
 int main () {
-  string a, result;
+  string a, result, vowels = "aoyeuiAOYEUI";
   getline(cin, a);
   for (int i = 0; i < a.length(); i++) {
-    a[i] = tolower(a[i]);
-    if (a[i] != 'a' && a[i] != 'o' && a[i] != 'y' && a[i] != 'e' && a[i] != 'u' && a[i] != 'i') {
+    if (vowels.find(a[i]) == string::npos) {
+      a[i] = tolower(a[i]);
       result += '.';
       result += a[i];
     }
